@@ -24,6 +24,7 @@ class MessageMiddleware(ABC):
 	#Si ocurre un error interno que no puede resolverse eleva MessageMiddlewareMessageError.
 	@abstractmethod
 	def start_consuming(self, on_message_callback):
+		#Ejemplo: consumer_queue.start_consuming(lambda message, ack, nack: message_consumer_tester.callback(message, ack, nack))		
 		pass
 	
 	#Si se estaba consumiendo desde la cola/exchange, se detiene la escucha. Si
